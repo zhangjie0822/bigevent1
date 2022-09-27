@@ -40,7 +40,6 @@ $(function(){
                 layer.msg('注册成功，请登录')
                 $('#link_login').click()
             }
-
         })
         // $.post('http://www.liulongbin.top:3007/api/reguser'),
         // { username:$('#form_reg [name=username]').val(),password:$('#form_reg [name=password]').val()},
@@ -63,6 +62,7 @@ $(function(){
                     return layer.msg('登陆失败！')
                 }
                 layer.msg('登陆成功！')
+                // console.log(res.token)
                 localStorage.setItem('token',res.token)
                 location.href = '/index.html'
             }
