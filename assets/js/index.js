@@ -18,11 +18,11 @@ function getUserInfo(){
         //     Authorization:localStorage.getItem('token')||''
         // },
         success(res){
-            console.log(res);
+            // console.log(res);
             if(res.status !== 0){
                 return layui.layer.msg('获取用户信息失败！')
             }
-            renderAvatar(res)
+            renderAvatar(res.data)
         },
         // complete:function(res){
             
@@ -35,7 +35,7 @@ function getUserInfo(){
     })
 }
 function renderAvatar(user){
-    const name = user.data.nickname || user.data.username
+    const name = user.nickname || user.username
     // console.log(name)
     $('#welcome').html('欢迎&nbsp;&nbsp;'+name)
     if(user.user_pic !== null){

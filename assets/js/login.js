@@ -35,7 +35,9 @@ $(function(){
             data,
             success(res){
                 if(res.status!==0){
+                    console.log(res.message)
                     return layer.msg(res.message)
+                    
                 }
                 layer.msg('注册成功，请登录')
                 $('#link_login').click()
